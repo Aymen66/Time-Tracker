@@ -1,0 +1,605 @@
+body {
+  /* background-image: url("mosque-interior-186854443-fda5270a665f4807a0dba30b17dc79df.jpg"); */
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  /* text-shadow: 1px 1px white; */
+  
+}
+*{
+  padding:0px;
+  margin:0px;
+
+
+}
+#gify {
+  /* animation: blinker 1s linear infinite; */
+  width: 10%;
+  border-radius: 50px;
+}
+#home{
+  max-width: 99%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+ margin-left: auto;
+ margin-right: auto;
+ /* margin-top: 15%; */
+  text-align: center;
+  background-color: rgb(231, 227, 227);
+  /* background-color: wheat; */
+border: 2px solid black;
+  
+}
+#warningSign{
+  /* margin-top: 10%; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  margin-top: 20px;
+  align-items: center;
+  
+}
+#loginMessageBtn{
+  font-size: 15px;
+  margin: 10px;
+}
+#warningSignDiv{
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+/* @keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+} */ 
+#logo{
+  width: 7%;
+  border-radius: 5px;
+  /* aspect-ratio: 2/3; */
+  
+}
+.navBarUl li{
+  /* background-color: inherit; */
+  /* color: white; */
+  font-weight: bold;
+  padding: 0px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  margin: 10px 20px;
+  padding: 10px 20px;
+  list-style-type:none;
+  cursor: pointer;
+}
+
+.navBarUl li:hover{
+  background-color: black;
+  color: white;
+  font-weight: bold;
+
+}
+.navBar nav{
+max-width: 100%;
+
+}
+.navBar{
+  /* display: block; */
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content:space-around;
+background-color: rgb(1, 1, 66);
+padding: 10px 10px;
+margin: 1px;
+/* height: 10vh; */
+/* max-width: 100%; */
+}
+.navBarUl{
+  display: flex;
+  max-width: 100%;
+
+}
+#newEntry{
+  border:  1px solid black;
+  margin: 5px 
+}
+#ItemDiv{
+  display: flex;
+  flex-direction: column;
+}
+#ItemDiv > p:last-child {
+ color: red;
+}
+.main{
+
+
+
+}
+/* css for sign up and sign in tab */
+.tabPage {
+overflow: hidden;
+border: 1px solid #ccc;
+background-color: #f1f1f1;
+border-radius: 5%;
+margin-bottom: 5%;
+
+
+}
+
+/* Style the buttons inside the tab */
+.tabPage button {
+background-color: inherit;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+transition: 0.3s;
+font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tabPage button:hover {
+background-color: #ddd;
+}
+/* #changeProfilePic{
+display: flex;
+} */
+/* Create an active/current tablink class */
+.tabPage button.active {
+background-color: #ccc;
+
+}
+
+/* Style the tab content */
+.tabcontentPage {
+display: none;
+padding: 6px 12px;
+/* border: 1px solid #ccc; */
+border-top: none;
+}
+
+#signin-page{
+/* display: none; */
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+max-width: 100%;
+/* border-bottom: 1px solid white; */
+
+}
+#signin-page input {
+/* padding: 3%; */
+max-width: 100%;
+padding: 3px;
+margin-top: 3px;
+margin-bottom: 3px;
+
+}
+
+
+
+#signup-container{
+border-radius: 10%;
+display: none;
+flex-direction: column;
+position: fixed;
+align-items: center;
+background-color: rgb(29, 27, 27);
+padding: 2%;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+max-width: 75%;
+top: 0;
+left: 0;
+transform: translate(calc(49vw - 50%), calc(50vh - 50%));
+}
+
+#signup-page h1 {
+text-align: center;
+margin-bottom: 10%;
+}
+
+#signup-evalidation, #signin-evalidation{
+color: rgb(255, 0, 0);
+display: none;
+flex-direction: column;
+}
+#signup-evalidation p, #signin-evalidation p{
+color: rgb(255, 0, 0);
+padding: 0%;
+margin: 0%;
+}
+
+/* #email {
+margin-bottom: 3%;
+} */
+
+#signUp , #signin{
+margin-bottom: 10px;
+/* margin-right: auto;
+margin-left: auto; */
+background: linear-gradient(90deg, #FFFFFF 0%, #FDA43C 100%);
+
+  border-radius: 10px; 
+     color: black;
+  transition: all 150ms ease-in-out;
+  box-shadow: 0px 2px 1px rgb(255, 254, 254);
+border: 1px solid black;
+  padding: 5px 5px;
+  font-weight: bold;
+  width: 40%;
+margin-top: 10% !important;
+
+}
+#loginDatesDiv{
+  /* background-color: #060606; */
+}
+ #loginMessageBtn{
+  margin-bottom: 10px;
+  /* margin-right: auto;
+  margin-left: auto; */
+  background: linear-gradient(90deg, #FFFFFF 0%, #FDA43C 100%);
+  
+    border-radius: 10px; 
+       color: black;
+    transition: all 150ms ease-in-out;
+    box-shadow: 0px 2px 1px rgb(255, 254, 254);
+  border: 1px solid black;
+    padding: 5px 5px;
+    font-weight: bold;
+    /* width: 40%; */
+  /* margin-top: 10% !important; */
+  
+  }
+#signup-page input {
+/* padding: 3%; */
+max-width: 100%;
+margin-top: 3px;
+margin-bottom: 3px;
+
+}
+/* #signUp {
+width: 55%;
+margin-top: 10%;
+} */
+#signup-page{
+/* border-top: 1px solid white; */
+
+display: none;
+flex-direction: column;
+max-width: 100%;
+justify-content: space-between;
+align-items: center;
+/* position: fixed;
+background-color: rgb(29, 27, 27);
+padding: 3%;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+max-width: 75%;
+top: 0;
+left: 0;
+transform: translate(calc(50vw - 50%), calc(40vh - 50%)); */
+}
+/* #signup-container {
+
+text-align: center;
+border-radius: 5%;
+
+} */
+#notCheckedWarning{
+color: red;
+display: none;
+}
+#signup-page label{
+color: whitesmoke;
+}
+#logoutBtn{
+display: none;
+margin-bottom: 10px;
+/* margin-right: auto;
+margin-left: auto; */
+background: linear-gradient(90deg, #FFFFFF 0%, #FDA43C 100%);
+
+  border-radius: 10px; 
+     color: black;
+  transition: all 150ms ease-in-out;
+  box-shadow: 0px 2px 1px rgb(6, 6, 6);
+border: 1px solid black;
+  padding: 5px 5px;
+  font-weight: bold;
+  max-width: fit-content;
+}
+#logoutBtn:active{
+background: #060606;
+color: white;
+
+}
+
+
+
+
+
+
+/* end of css of signup and signin */
+[data-tab-content] {
+  display: none;
+  border-radius: 10px; 
+  padding: 10px;
+  max-width: 95%; 
+  min-height: 30vh;
+
+  
+}
+#userVocabListEl div {
+list-style-type: none;
+margin: 5px;
+padding: 0px;
+display: flex;
+
+gap: 10px;
+align-items: center;
+justify-content: center;
+border: 1px solid black;
+
+}
+#userVocabListEl p {
+text-align: center;
+font-size: medium;
+margin-left: auto;
+margin-right: auto;
+
+}
+#loginDateElement{
+  color: red;
+  font-size: 13px;
+  margin: 10px 5px;
+
+  
+}
+
+#logOutDateElement{
+  font-size: 13px;
+  margin: 10px 5px;
+color: blue;
+}
+#smallerNewEntryDiv{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 5px;
+  cursor: pointer;
+  
+}
+#newEntry{
+  display: flex;
+  flex-direction: column;
+  padding: 5px
+  
+  
+}
+
+#logInandLogOutDiv{
+  display: flex;
+  justify-content: space-around;
+  
+/* background-color: blueviolet; */
+
+}
+/* #addCount-btn{
+  
+
+} */
+
+span{
+  margin:5px 10px;
+  padding:0px;
+  cursor: pointer;
+
+}
+#divTr{
+  display: flex;
+  /* flex-direction: column-reverse; */
+  /* flex-wrap: wrap; */
+  gap: 0px 0px;
+  border: 1px solid black;
+  /* background-color: antiquewhite; */
+  max-width: fit-content;
+  padding: 5px;
+  margin: 3px 10px;
+  align-items: center;
+  justify-content: center;
+
+
+
+}
+#InputElName{
+  color: white;
+  margin-bottom: 30px;
+}
+input{
+  padding: 10px;
+}
+#div{
+  display: block;
+  /* background-color: white; */
+  color: white;
+  /* background-color: black; */
+}
+/* #reset{
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+} */
+#logInBtn, #reset, #close, #LogOutBtn{
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+#logInBtn, #LogOutBtn{
+  margin: 30px;
+}
+#LoginDateMessage, #LogOutDateMessage{
+  border: 1px solid white;
+  padding:  10px 5px;
+  font-size: small;
+
+}
+#LogOutDateMessage{
+  margin-bottom:  10px;
+
+}
+/* #increament{
+ float: left;
+ 
+} */
+#close{
+  float: left;
+
+}
+/* fa fa-trash */
+#btnConfirm{
+  font-size: 50px;
+  border: none;
+  background: none;
+}
+#logInBtn:focus ,#reset:focus{
+  background-color: black;
+  color: white;
+  border:1px solid white;
+}
+.form{
+  margin: 50px 0px 0px 0px;
+
+}
+#noEntry{
+  margin: 50px 0px 0px 0px;
+
+}
+#CountDiv{
+  background-color: black;
+  margin-bottom: 30px;
+  color: white;
+display: block;
+}
+#result{
+  margin: 20px 10px;
+  font-size: 40;
+  font-weight: bold;
+
+
+}
+#save-el{
+  color: black;
+  display: flex;
+  max-width: 100%;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#delete-btn{
+  color: white;
+  max-width: max-content;
+ padding: 5px;
+  background-color: black;
+  border-radius: 5px;
+  
+}
+
+/* #save-el li{
+  list-style: none;
+  margin: 1px 5px;
+} */
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 50px;
+  color: black;
+}
+
+/* h2 {
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 20px;
+} */
+
+
+
+
+#increment-btn {
+  background: darkred;
+}
+
+#save-btn {
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 600px) {
+  #home{
+  min-height: 98vh;
+
+  }
+ .main{
+  max-width: 98%;
+  /* background-color: black; */
+  /* min-height: 98vh; */
+
+ } 
+ .form{
+  margin: 50px 0px 0px 0px;
+
+}
+.disabled-button {
+pointer-events: none;
+opacity: 0.5;
+/* Add any other styles you want to use to visually disable the button */
+}
+.entry{
+  margin: 30px 0px 0px 0px;
+
+}
+#increament, #reset{
+  font-size: medium;
+}
+#close{
+  font-size: 30px;
+}
+
+#warningSign{
+ 
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 20px;
+   
+}
+#logo{
+  width: 20% 
+}
+
+.navBarUl li{
+  /* background-color: inherit; */
+  /* color: white; */
+ 
+  margin: 10px 5px;
+  padding: 10px 10px;
+  
+}
+}

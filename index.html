@@ -1,0 +1,136 @@
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="index.css">
+    </head>
+    <body  >
+      <header class="navBar">
+        <img id="logo" src="time-tracker.png"/>
+        <nav>
+          <ul class="navBarUl">
+            <li class="navBtn" onclick="navBar('Home')">Home</li>
+          <li class="navBtn"  onclick="navBar('Contact')">Contact</li>
+          <li class="navBtn"  onclick="navBar('List')">List</li>
+          </ul>
+        </nav>
+      </header>
+
+
+      <div id="Home" class="nav">
+        <div id="main" class="main">
+          <div id="signup-container">
+                       <div class="tabPage">
+                         <button class=" active tablinksPage" onclick="openCity(event, 'signin-page')">Sign in</button>
+                         <button class="tablinksPage" onclick="openCity(event, 'signup-page')">Sign up</button>
+                       </div>
+                       
+                       <div id="signin-page" class="active tabcontentPage">
+                         <!-- <h1>Sign in</h1> -->
+                           <input id = "signin-email" type = "text" placeholder = "Email"/>
+                         <input id = "signin-password" type = "password" placeholder = "Password"/>
+                          
+
+                         <div id='signin-evalidation'>
+                           <p>the Email address or the password is incorrect .</p>
+                         
+                         </div>
+                         <input type="submit" id = "signin" name="signin_submit" value="sign in"/>
+                  
+                         </div>
+                       
+                       
+                       <div id="signup-page" class="tabcontentPage">
+                         <!-- <h1>Sign up</h1> -->
+                           <input id = "username" type = "text" name="username" placeholder = "username"/>
+                       <input id = "email" type = "text" placeholder = "Email"/>
+               
+                       <input id = "password" type = "password" placeholder = "Password"/>
+                       
+                       <div id='signup-evalidation'>
+                         <p>Email address should be in full format.</p>
+                         <p>Password should be 6 characters long.</p>
+                       </div>
+                       <!-- <div id="profilePic"></div>
+                       <input  id = "profilePicInput" type = "file" placeholder = "profile pic"/>
+
+                       <div> -->
+                         <label for="agreement"><input type="checkbox" name="agreement" required value= "yes" name="agreement" id="agreement"/> The data will be saved in a remote database.Do you agree? </label>
+                         <p id="notCheckedWarning">Please check the checkbox to continue.</p>
+                         <input type="submit" id = "signUp" name="signup_submit" value="sign up"/>
+                       </div>
+                       </div>
+                                 <button id="logoutBtn">Log out</button>
+                                 
+
+         <h1>Time Tracker</h1>
+         <div class="form"><input id="input-el" placeholder="add an item to count"/> 
+             <button id="save-btn" onclick="save()">Save</button><br>
+         </div>
+         <!-- <button id="delete-btn" onclick="deleteBtn()">delete</button> -->
+
+         <!-- <h2 id="savedEntry">
+             Saved Entries: 
+
+         </h2> -->
+  
+     </div>
+     <div id="warningSign">
+
+     </div>
+      </div>
+      
+      <div id="Contact" class="nav" style="display:none">
+        <h2>Contact</h2>
+        <p>Paris is the capital of France.</p> 
+      </div>
+      
+      <div id="List" class="nav" style="display:none">
+        <h2>List</h2>
+        <h2  id="noEntry">
+
+        </h2>
+        <table id="save-el">
+        </table> 
+        <div id="CountDiv">
+            
+        </div>
+        <div id="clickedEntryDetails"></div>
+
+        <div id="dateEntry"></div>
+        <div id="timedifference"></div>
+      </div>
+
+
+        
+        <script src="index.js" type="module">
+            
+        </script>
+          <script >
+
+        function openCity(evt, cityName) {
+  var i, tabcontentPage, tablinksPage;
+  tabcontentPage = document.getElementsByClassName("tabcontentPage");
+  for (i = 0; i < tabcontentPage.length; i++) {
+    tabcontentPage[i].style.display = "none";
+  }
+  tablinksPage = document.getElementsByClassName("tablinksPage");
+  for (i = 0; i < tablinksPage.length; i++) {
+    tablinksPage[i].className = tablinksPage[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "flex";
+  evt.currentTarget.className += " active";
+}
+       </script>
+       <script>
+        function navBar (NavName) {
+  var i;
+  var x = document.getElementsByClassName("nav");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(NavName).style.display = "block";  
+}
+       </script>
+    </body>
+</html>
