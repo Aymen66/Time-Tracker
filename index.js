@@ -116,26 +116,36 @@ function displaySavedEntryInDB(item) {
   icon.classList = "fa fa-trash";
   btnConfirm.append(icon);
   btnConfirm.id = "btnConfirm";
+  let removeFromDB 
+
 const user = auth.currentUser;
         if (user) {
-             btnConfirm.addEventListener("click", function () {
+  btnConfirm.addEventListener("click", function () {
     // const user = auth.currentUser;
-    
-const removeFromDB = {
+    document.getElementById('id01').style.display='block'
+
+    document.getElementById("span").textContent=item[1];
+ removeFromDB = {
    vocabIDInDB : ref(database, `userEntrySaved/${user.uid}/${vocabID}`),
    userEntryInDB : ref(database, `userEntry/${user.uid}`),
   userLogOutButtonClickedInDB : ref(database, `userLogOutButtonClicked/${user.uid}/${vocabID}`),
   userLogOutEntryInDB: ref(database, `userLogOutEntry/${user.uid}/${vocabID}`)
 }
 
+   
+
+  });
+  let btnRemove = document.getElementById("btnRemove")
+   btnRemove.addEventListener("click", function(){
     remove(removeFromDB.vocabIDInDB );
     remove(removeFromDB.userEntryInDB );
     remove(removeFromDB.userLogOutButtonClickedInDB );
     remove( removeFromDB.userLogOutEntryInDB );
 
     location.reload();
+    document.getElementById('id01').style.display='none'
 
-  });
+})
         }
  
 

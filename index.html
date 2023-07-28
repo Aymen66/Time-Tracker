@@ -97,7 +97,23 @@
         </div>
         <div id="clickedEntryDetails"></div>
 
-        <div id="dateEntry"></div>
+        <div id="dateEntry">
+          <div id="id01" class="modal">
+            <form class="modal-content" action="/action_page.php">
+              <div class="modalcontainer">
+                <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> -->
+
+                <h1>Confirm to delete </h1>
+                <p>Are you sure you want to delete all login and logout dates in <span id="span"></span>?</p>
+              
+                <div class="clearfix">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">No</button>
+                  <button type="button" id="btnRemove"  class="deletebtn">Yes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
         <div id="timedifference"></div>
       </div>
 
