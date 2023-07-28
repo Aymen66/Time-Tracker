@@ -127,7 +127,7 @@ const user = auth.currentUser;
     document.getElementById("span").textContent=item[1];
  removeFromDB = {
    vocabIDInDB : ref(database, `userEntrySaved/${user.uid}/${vocabID}`),
-   userEntryInDB : ref(database, `userEntry/${user.uid}`),
+   userEntryInDB : ref(database, `userEntry/${user.uid}/${vocabID}`),
   userLogOutButtonClickedInDB : ref(database, `userLogOutButtonClicked/${user.uid}/${vocabID}`),
   userLogOutEntryInDB: ref(database, `userLogOutEntry/${user.uid}/${vocabID}`)
 }
