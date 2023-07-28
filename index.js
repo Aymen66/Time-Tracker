@@ -44,7 +44,7 @@ saveBtn.addEventListener("click", function(){
   const entrySavedInDB = ref(database, `userEntrySaved/${user.uid}`)
   push(entrySavedInDB, savedEntry)
   clearInputField ()
-  location.reload();
+  // location.reload();
   
 })
 
@@ -142,7 +142,7 @@ const user = auth.currentUser;
     remove(removeFromDB.userLogOutButtonClickedInDB );
     remove( removeFromDB.userLogOutEntryInDB );
 
-    location.reload();
+    // location.reload();
     document.getElementById('id01').style.display='none'
 
 })
@@ -330,7 +330,7 @@ loginMessageDiv.id="loginMessageDiv";
    
      const LogOutDateSavedInDB = ref(database, `userLogOutEntry/${user.uid}/${vocabID}`);
      push(LogOutDateSavedInDB, LogOutDateMessage);
-     location.reload();
+    //  location.reload();
     
     // After the Firebase operation is completed, enable the button again
     logOutButton.disabled = false;
