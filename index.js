@@ -330,7 +330,7 @@ loginMessageDiv.id="loginMessageDiv";
    
      const LogOutDateSavedInDB = ref(database, `userLogOutEntry/${user.uid}/${vocabID}`);
      push(LogOutDateSavedInDB, LogOutDateMessage);
-    //  location.reload();
+     location.reload();
     
     // After the Firebase operation is completed, enable the button again
     logOutButton.disabled = false;
