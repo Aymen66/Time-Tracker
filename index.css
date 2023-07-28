@@ -16,6 +16,97 @@ body {
 }
 
 /* Add a color to the cancel button */
+.closebutton {
+  background-color: darkslategray;
+  color: white;
+  padding: 15px;
+  float: left;
+  /* width: 30%; */
+  margin-right: 5px;
+  border: 1px solid white;
+
+
+}
+
+/* Add a color to the delete button */
+/* .loggingbutton {
+  background-color: darkslategray;
+  float: right;
+  width: 30%;
+  padding: 5px;
+  margin-left: 5px;
+  color: white;
+
+} */
+
+/* Add padding and center-align text to the container */
+.loginModalcontainer {
+  padding: 16px;
+  text-align: center;
+  
+
+}
+.loginModalcontainer > h1 {
+  color: black;
+  font-size: large;
+
+}
+#clickedEntryDetails{
+  /* background-color: #060606; */
+}
+.loginModalcontainer > p {
+  color: black;
+
+}
+/* #span{
+  color: red;
+  font-weight: bold;
+  font-size: large;
+} */
+/* The Modal (background) */
+.loginModal {
+  display: none; /* Hidden by default */
+  /* left: 50;
+right: 50; */
+background-color: darkslategray;
+
+left: 0;
+  top: 0;
+  max-width: 70%; /* Full width */
+  position: fixed; /* Stay in place */
+  border: 1px solid #888;
+  /* overflow: auto;  */
+  padding-top: 0px;
+  /* margin-top: 20%; */
+  text-align: center;
+/* margin-left: auto;
+margin-right: auto; */
+width: 20%; /* Could be more or less, depending on screen size */
+border-radius: 5%;
+
+transform: translate(calc(50vw - 50%), calc(40vh - 50%));
+}
+#newlyDiv{
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+}
+
+/* Modal Content/Box */
+.loginModal-content {
+  margin: 0% auto 0% auto; /* 5% from the top, 15% from the bottom and centered */
+
+  width: 100%; /* Could be more or less, depending on screen size */
+  border-radius: 5%;
+
+}
+.loginClearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+  
+}
+/* Add a color to the cancel button */
 .cancelbtn {
   background-color: darkslategray;
   color: white;
@@ -133,6 +224,7 @@ border: 2px solid black;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 
 
 }
@@ -673,7 +765,9 @@ opacity: 0.5;
 #logo{
   width: 20% 
 }
-
+#gify{
+  width: 20%
+}
 .navBarUl li{
   /* background-color: inherit; */
   /* color: white; */
@@ -681,5 +775,8 @@ opacity: 0.5;
   margin: 10px 5px;
   padding: 10px 10px;
   
+}
+.loginModal {
+  width: 50%;
 }
 }

@@ -148,10 +148,17 @@ const user = auth.currentUser;
 })
         }
  
+    let quit = false;
 
   // Add a click event listener to each entry to create a new div
   newEntry.addEventListener("click", function () {
-  
+    if(quit) {
+        
+      return;
+   } 
+   quit = true;
+    document.getElementById('loginModal').style.display='block'
+
     // Create a new div to display the details of the clicked entry
     let newlyDiv = document.createElement("div");
   newlyDiv.id = "newlyDiv";
@@ -159,7 +166,7 @@ const user = auth.currentUser;
     newlyDiv.textContent = ` ${item[1]}`;
     // Add this new div to the DOM
       
-    document.getElementById("clickedEntryDetails").appendChild(newlyDiv);
+    document.getElementById("loginModal").appendChild(newlyDiv);
     
    
    let logInBtn = document.createElement("button")
@@ -187,6 +194,7 @@ const user = auth.currentUser;
 
         } 
      
+    document.getElementById('loginModal').style.display='none'
       
   })
           
@@ -845,7 +853,7 @@ window.location.reload();
 
   }
 
-  let quit = false;
+  // let quit = false;
 
  
   function createDiv(index) {
