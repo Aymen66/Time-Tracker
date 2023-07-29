@@ -189,8 +189,8 @@ const user = auth.currentUser;
       console.log(LoginDateMessage)
 
     // location.reload();
-  smallerNewEntryDiv.innerHTML = "";
-  newlyDiv.textContent= "";
+  // smallerNewEntryDiv.innerHTML = "";
+  // newlyDiv.textContent= "";
 
         } 
      
@@ -241,6 +241,9 @@ loginMessageDiv.id="loginMessageDiv";
         get(buttonClickedRef).then((snapshot) => {
           if (snapshot.exists() && snapshot.val() === true) {
             logOutButton.disabled = true;
+            logOutButton.style.opacity = "0.5";
+  logOutButton.style.pointerEvents = "none";
+
 
           } else {
             logOutButton.disabled = false; // Ensure the button is enabled initially
@@ -289,7 +292,10 @@ loginMessageDiv.id="loginMessageDiv";
 
   // Disable the button before starting the Firebase operation
   logOutButton.disabled = true;
+  document.getElementById('warningSign').style.display='none'
 
+  logOutButton.style.opacity = "0.5";
+  logOutButton.style.pointerEvents = "none";
   try {
     // Set the buttonClickedRef to true in the database
     await set(buttonClickedRef, true);
@@ -330,7 +336,7 @@ loginMessageDiv.id="loginMessageDiv";
    
      const LogOutDateSavedInDB = ref(database, `userLogOutEntry/${user.uid}/${vocabID}`);
      push(LogOutDateSavedInDB, LogOutDateMessage);
-     location.reload();
+    //  location.reload();
     
     // After the Firebase operation is completed, enable the button again
     logOutButton.disabled = false;
