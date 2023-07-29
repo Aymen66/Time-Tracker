@@ -148,15 +148,18 @@ const user = auth.currentUser;
 })
         }
  
-    let quit = false;
+let closeButton = document.getElementById("closeButton")
+closeButton.addEventListener("click", function(){
+  // document.getElementById('loginModal').style.display='none'
+  // newEntry.remove();
+  newlyDiv.remove();
+  loginModal.style.display='none';
 
+
+})
   // Add a click event listener to each entry to create a new div
   newEntry.addEventListener("click", function () {
-    if(quit) {
-        
-      return;
-   } 
-   quit = true;
+  
     document.getElementById('loginModal').style.display='block'
 
     // Create a new div to display the details of the clicked entry
