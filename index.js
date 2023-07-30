@@ -149,15 +149,22 @@ const user = auth.currentUser;
         }
  
     let quit = false;
-
+    let closeButton = document.getElementById("closeButton");
+    closeButton.addEventListener("click", function () {
+      
+      document.getElementById("loginModal").style.display = "none";
+    
+    });
   // Add a click event listener to each entry to create a new div
+  
   newEntry.addEventListener("click", function () {
-    if(quit) {
-        
-      return;
-   } 
-   quit = true;
-    document.getElementById('loginModal').style.display='block'
+if (quit){
+  document.getElementById('loginModal').style.display='block'
+
+  return;
+  
+}
+quit = true
 
     // Create a new div to display the details of the clicked entry
     let newlyDiv = document.createElement("div");
@@ -337,6 +344,7 @@ loginMessageDiv.id="loginMessageDiv";
      const LogOutDateSavedInDB = ref(database, `userLogOutEntry/${user.uid}/${vocabID}`);
      push(LogOutDateSavedInDB, LogOutDateMessage);
     //  location.reload();
+    document.getElementById("loginModal").style.display = "none";
     
     // After the Firebase operation is completed, enable the button again
     logOutButton.disabled = false;
