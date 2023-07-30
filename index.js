@@ -6,6 +6,8 @@ import { getDatabase,set, ref, push, onValue, remove,update,get,limitToLast   } 
 import { getStorage, ref as sRef,uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-storage.js";
 
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword,onAuthStateChanged, fetchSignInMethodsForEmail, signOut    } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+const loginSound = new Audio("loginSound.mp3")
+const alarm = new Audio("alarm.mp3")
 
 const firebaseConfig = {
   apiKey: "AIzaSyC4nZt7BlnLm7A5Q_MMZZW1Y_xuTPbVYFg",
@@ -194,7 +196,7 @@ quit = true
   push(LoginDateSavedInDB, LoginDateMessage)
       console.log(item[1])
       console.log(LoginDateMessage)
-
+      loginSound.play();
     // location.reload();
   // smallerNewEntryDiv.innerHTML = "";
   // newlyDiv.textContent= "";
@@ -284,7 +286,6 @@ loginMessageDiv.id="loginMessageDiv";
 
             warningSign.append(gify);
             warningSign.append(warningSignDiv);
-        
 
             loginMessageBtn.addEventListener('click', logOutHandle);
 
@@ -345,6 +346,7 @@ loginMessageDiv.id="loginMessageDiv";
      push(LogOutDateSavedInDB, LogOutDateMessage);
     //  location.reload();
     document.getElementById("loginModal").style.display = "none";
+    loginSound.play();
     
     // After the Firebase operation is completed, enable the button again
     logOutButton.disabled = false;
