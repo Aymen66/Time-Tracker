@@ -15,6 +15,20 @@ body {
 
 
 }
+#signupDetail{
+display: flex;
+padding: 10px;
+align-items: center;
+justify-content: space-between;
+}
+#signupDetail p {
+  font-weight: bold;
+
+}
+#signupEmail, #signupName {
+  color: darkblue;
+  font-weight: bold;
+}
 
 /* Add a color to the cancel button */
 .closebutton {
@@ -833,5 +847,12 @@ justify-content: center;
 
 #signup-page label{
   font-size: small;
+}
+#signupDetail p {
+  font-size: 10px;
+
+}
+#signupEmail, #signupName {
+  font-size: 10px;
 }
 }

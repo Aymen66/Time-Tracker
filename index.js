@@ -522,6 +522,33 @@ auth.signOut();
 window.location.reload()  //   to refresh the page so that  the current user's data that is retrieved in "My List" can be displayed wihtout having to refresh the page 
 
 })
+
+auth.onAuthStateChanged(function(user) {
+  if (user) {
+    const signUpfromDB = ref(database, `users/${user.uid}`);
+    onValue(signUpfromDB, (snapshot) => {
+      // for (let i =0; i < signUpData.length; i++)[
+      //   document.getElementById("signupDetail").innerHTML= signUpData[i]
+
+      // ]
+
+      if (snapshot.exists()){
+   
+        let signUpData = snapshot.val();
+        const currentUserName = signUpData;
+
+
+        document.getElementById("signupName").textContent=currentUserName.username 
+        document.getElementById("signupEmail").textContent=currentUserName.email 
+
+
+        
+    }  
+
+
+    })
+  }
+})
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 // // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 // import { getDatabase,set, ref, push, onValue, remove,update,get,limitToLast   } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
