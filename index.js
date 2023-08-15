@@ -103,8 +103,11 @@ function displaySavedEntryInDB(item) {
 
   const noEntry = document.getElementById("noEntry");
   smallerNewEntryDiv.innerHTML = ` <div id="ItemDiv"> 
+ <div id= "workAndHourDiv"> 
   <p id="itemP">${item[1]} 
-  </p> <br>
+  </p> <p id="totalEl"> 
+  </p> 
+ </div>
   <p>Click to Show login button </p>
   </div>
   
@@ -347,7 +350,22 @@ loginMessageDiv.id="loginMessageDiv";
     //  location.reload();
     document.getElementById("loginModal").style.display = "none";
     loginSound.play();
-    
+    let countDiv = [];
+      let newValue = Number(hoursDiff);
+
+  // If the value is a valid number, proceed
+  if (!isNaN(newValue)) {
+    // Add the new value to the existing values in the array
+    let sum = countDiv.reduce((acc, curr) => acc + curr, 0) + newValue;
+
+    // Push the new value to the array
+    countDiv.push(newValue);
+    // const hoursTotalDB = ref(database, `hoursTotal/${user.uid}/${vocabID}`);
+      const hoursTotalDB = ref(database, `hoursTotal/${user.uid}`)
+
+     push(hoursTotalDB, countDiv);
+       }
+
     // After the Firebase operation is completed, enable the button again
     logOutButton.disabled = false;
   } catch (error) {
@@ -542,6 +560,37 @@ auth.onAuthStateChanged(function(user) {
         document.getElementById("signupEmail").textContent=currentUserName.email 
 
 
+        
+    }  
+
+
+    })
+  }
+})
+
+auth.onAuthStateChanged(function(user) {
+  if (user) {
+    // const hoursTotalDB = ref(database, `hoursTotal/${user.uid}/${vocabID}`);
+      const hoursTotalDB = ref(database, `hoursTotal/${user.uid}`)
+    
+    onValue(hoursTotalDB, (snapshot) => {
+      // for (let i =0; i < signUpData.length; i++)[
+      //   document.getElementById("signupDetail").innerHTML= signUpData[i]
+
+      // ]
+
+      if (snapshot.exists()){
+   
+        let totalUpData = Object.values(snapshot.val())
+      
+          for (let i = 0; i< totalUpData.length; i++){
+              let totalData = totalUpData[i]
+        document.getElementById("totalEl").textContent=`Total Hours : ${totalData}`
+        
+        
+
+
+    }  
         
     }  
 
