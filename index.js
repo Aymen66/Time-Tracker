@@ -27,6 +27,8 @@ const auth = getAuth(app);
    const user = auth.currentUser;
 
 let items = []
+let countDiv = [];
+
    let  inputEl =document.getElementById("input-el");
 
 const saveBtn = document.getElementById("save-btn")
@@ -134,7 +136,9 @@ const user = auth.currentUser;
    vocabIDInDB : ref(database, `userEntrySaved/${user.uid}/${vocabID}`),
    userEntryInDB : ref(database, `userEntry/${user.uid}/${vocabID}`),
   userLogOutButtonClickedInDB : ref(database, `userLogOutButtonClicked/${user.uid}/${vocabID}`),
-  userLogOutEntryInDB: ref(database, `userLogOutEntry/${user.uid}/${vocabID}`)
+  userLogOutEntryInDB: ref(database, `userLogOutEntry/${user.uid}/${vocabID}`),
+  hoursTotalInDB: ref(database, `hoursTotal/${user.uid}`)
+
 }
 
    
@@ -146,6 +150,8 @@ const user = auth.currentUser;
     remove(removeFromDB.userEntryInDB );
     remove(removeFromDB.userLogOutButtonClickedInDB );
     remove( removeFromDB.userLogOutEntryInDB );
+    remove( removeFromDB.hoursTotalInDB );
+
 
     // location.reload();
     document.getElementById('id01').style.display='none'
@@ -350,20 +356,20 @@ loginMessageDiv.id="loginMessageDiv";
     //  location.reload();
     document.getElementById("loginModal").style.display = "none";
     loginSound.play();
-    let countDiv = [];
       let newValue = Number(hoursDiff);
 
   // If the value is a valid number, proceed
   if (!isNaN(newValue)) {
+    // Push the new value to the array
+    countDiv.push(newValue);
     // Add the new value to the existing values in the array
     let sum = countDiv.reduce((acc, curr) => acc + curr, 0) + newValue;
 
-    // Push the new value to the array
-    countDiv.push(newValue);
+    
     // const hoursTotalDB = ref(database, `hoursTotal/${user.uid}/${vocabID}`);
       const hoursTotalDB = ref(database, `hoursTotal/${user.uid}`)
 
-     push(hoursTotalDB, countDiv);
+     push(hoursTotalDB, sum);
        }
 
     // After the Firebase operation is completed, enable the button again
